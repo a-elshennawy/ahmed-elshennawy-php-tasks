@@ -26,26 +26,27 @@ if (isset($_POST['logBtn'])) {
 
 <body>
     <div class="container">
-        <h1>Log In Form</h1>
         <form method="POST" action="" class="loginForm row">
-            <div class="inputgroup col-10">
+            <h1>Log In Form</h1>
+            <div class="inputgroup col-12">
                 <input type="text" name="userName" placeholder="Enter your username" required>
             </div>
-            <div class="inputgroup col-10">
+            <div class="inputgroup col-12">
                 <input type="password" name="passWord" placeholder="Enter your password" required>
             </div>
-            <button type="submit" name="logBtn" class="logBtn col-3">
+            <button type="submit" name="logBtn" class="logBtn col-2">
                 log in
             </button>
-        </form>
-    </div>
 
-    <?php if ($credMatch === true): ?>
-        <p class="welcomeMsg">Welcome back, <?= $userName ?></p>
-    <?php elseif ($credMatch === false): ?>
-        <p class="wrongCred">Wrong username / password, try again.</p>
-    <?php else: ?>
-    <?php endif; ?>
+            <?php if ($credMatch === true): ?>
+                <p class="welcomeMsg">Welcome back, <?= $userName ?></p>
+            <?php elseif ($credMatch === false): ?>
+                <p class="wrongCred">Wrong username / password <br> try again.</p>
+            <?php else: ?>
+            <?php endif; ?>
+        </form>
+
+    </div>
 
     <script src="bootstrap.bundle.min.js"></script>
 </body>
