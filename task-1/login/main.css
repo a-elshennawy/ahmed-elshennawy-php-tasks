@@ -20,8 +20,8 @@ h2 {
     margin: auto;
     padding: 20px;
     justify-content: center;
-    border-radius: 15px;
-    box-shadow: 0 0 10px #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #02afff;
 
     .inputgroup {
         text-align: center;
@@ -33,7 +33,7 @@ h2 {
             border: none;
 
             &:focus {
-                box-shadow: 0 0 10px #fff;
+                box-shadow: 0 0 10px #02afff;
                 outline: none;
                 border: none;
             }
@@ -44,7 +44,7 @@ h2 {
         background-color: #fff;
         color: #000;
         border: none;
-        border-radius: 10px;
+        border-radius: 0px;
         padding: 10px;
         margin: 20px 0px;
         transition: all .3s ease-in-out;
@@ -52,7 +52,7 @@ h2 {
         &:hover {
             background-color: #000;
             color: #fff;
-            box-shadow: 0 0 10px #fff;
+            box-shadow: 0 0 10px #02afff;
         }
     }
 

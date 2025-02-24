@@ -1,12 +1,14 @@
 <?php
-$userName = "mohamed";
-$passWord = "123";
+$userName = "shennawy";
+$passWord = "shenno997";
 
-$loginMatch = false;
+$credMatch = null;
 
 if (isset($_POST['logBtn'])) {
     if ($_POST['userName'] == $userName && $_POST['passWord'] == $passWord) {
-        $loginMatch = true;
+        $credMatch = true;
+    } else {
+        $credMatch = false;
     }
 }
 ?>
@@ -38,10 +40,11 @@ if (isset($_POST['logBtn'])) {
         </form>
     </div>
 
-    <?php if ($loginMatch): ?>
-        <h2>
-            Welcome back, <?= $userName ?>
-        </h2>
+    <?php if ($credMatch === true): ?>
+        <h2>Welcome back, <?= $userName ?></h2>
+    <?php elseif ($credMatch === false): ?>
+        <h2>Wrong username / password, try again.</h2>
+    <?php else: ?>
     <?php endif; ?>
 
     <script src="bootstrap.bundle.min.js"></script>
