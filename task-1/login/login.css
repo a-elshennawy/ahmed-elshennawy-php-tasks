@@ -1,7 +1,7 @@
 * {
     text-transform: capitalize !important;
     box-sizing: border-box;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: monospace;
 }
 
 body {
@@ -20,8 +20,8 @@ h2 {
     margin: auto;
     padding: 20px;
     justify-content: center;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #02afff;
+    border-radius: 0px;
+    filter: drop-shadow(0 0 20px #02afff);
 
     .inputgroup {
         text-align: center;
