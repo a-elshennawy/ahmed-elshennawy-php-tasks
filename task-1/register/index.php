@@ -29,16 +29,16 @@ if (isset($_POST['regBtn'])) {
     <div class="container">
         <form method="POST" action="" class="regForm row">
             <h1>Sign up Form</h1>
-            <div class="inputgroup col-10">
+            <div class="inputgroup col-12">
                 <input type="text" name="userName" placeholder="Enter your username" required>
             </div>
-            <div class="inputgroup col-10">
+            <div class="inputgroup col-12">
                 <input type="email" name="email" placeholder="Enter your email" required>
             </div>
-            <div class="inputgroup col-10">
+            <div class="inputgroup col-12">
                 <input type="password" name="passWord" placeholder="choose your password" required>
             </div>
-            <button type="submit" name="regBtn" class="regBtn col-3">
+            <button type="submit" name="regBtn" class="regBtn col-2">
                 sign up
             </button>
 
