@@ -20,7 +20,7 @@ if (isset($_POST['logBtn'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="login.css">
     <title>Log In</title>
 </head>
 
@@ -35,15 +35,15 @@ if (isset($_POST['logBtn'])) {
                 <input type="password" name="passWord" placeholder="Enter your password" required>
             </div>
             <button type="submit" name="logBtn" class="logBtn col-3">
-                Log In
+                log in
             </button>
         </form>
     </div>
 
     <?php if ($credMatch === true): ?>
-        <h2>Welcome back, <?= $userName ?></h2>
+        <p class="welcomeMsg">Welcome back, <?= $userName ?></p>
     <?php elseif ($credMatch === false): ?>
-        <h2>Wrong username / password, try again.</h2>
+        <p class="wrongCred">Wrong username / password, try again.</p>
     <?php else: ?>
     <?php endif; ?>
 
