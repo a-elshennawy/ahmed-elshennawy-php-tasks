@@ -1,0 +1,60 @@
+* {
+    text-transform: capitalize !important;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: #000;
+}
+
+h1,
+h2 {
+    text-align: center;
+    color: #fff;
+    margin: 30px 0px;
+}
+
+.changepasswordFrom {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #fff;
+
+    .inputgroup {
+        text-align: center;
+        margin: 10px 0px;
+
+        input {
+            border-radius: 10px;
+            padding: 5px;
+            border: none;
+
+            &:focus {
+                box-shadow: 0 0 10px #fff;
+                outline: none;
+                border: none;
+            }
+        }
+    }
+
+    .changeBtn {
+        background-color: #fff;
+        color: #000;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 20px 0px;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            background-color: #000;
+            color: #fff;
+            box-shadow: 0 0 10px #fff;
+        }
+    }
+
+
+}
