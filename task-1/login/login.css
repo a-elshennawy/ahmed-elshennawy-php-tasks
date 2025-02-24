@@ -9,7 +9,6 @@ body {
 }
 
 
-
 .loginForm {
     position: fixed;
     top: 40%;
@@ -70,5 +69,4 @@ body {
         color: #fd0000;
         filter: drop-shadow(0 0 20px #fd0000);
     }
-
 }
