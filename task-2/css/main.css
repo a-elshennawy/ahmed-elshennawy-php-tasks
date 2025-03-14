@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  text-transform: capitalize;
+  font-family: cursive !important;
+}
+
+body {
+  background-color: #000;
+}
+
+.inptPanel {
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 50px auto;
+
+  .header {
+    text-align: center;
+    margin: 20px 0px;
+    h2 {
+      color: #fff;
+      text-transform: uppercase !important;
+    }
+  }
+
+  .dataForm {
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(#fff, #000);
+    padding: 30px;
+    border-radius: 10px;
+    gap: 20px;
+
+    input,
+    select {
+      padding: 5px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      transition: all 0.3s ease-in-out;
+
+      &:focus {
+        box-shadow: 0 0 10px #000;
+      }
+    }
+
+    .submitBtn {
+      position: relative;
+      border: none;
+      padding: 7px 10px;
+      text-transform: capitalize;
+      background-color: #000;
+      filter: drop-shadow(0 0 3px #fff);
+      color: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+      z-index: 1;
+      transition: all 0.5s ease-in-out;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 0%;
+        background-color: #fff;
+        border-radius: 5px;
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+        color: #000;
+        filter: none;
+
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
