@@ -8,6 +8,7 @@ body {
   background-color: #000;
 }
 
+/* input panel */
 .inptPanel {
   justify-content: center;
   align-items: center;
@@ -75,6 +76,43 @@ body {
 
         &::before {
           width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/* customers list */
+.customersList {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  outline: 10px solid #3b3939;
+  color: #fff;
+  padding: 20px;
+
+  thead {
+    background-color: #000;
+    border-radius: 5px;
+    padding: 20px;
+    border-bottom: 1px solid #3b3939;
+
+    td {
+      padding: 10px;
+    }
+  }
+  tbody {
+    background-color: #000;
+    border-radius: 5px;
+    tr {
+      border-bottom: 1px solid #3b3939;
+      td {
+        padding: 10px;
+        a {
+          color: #fff;
+          text-decoration: none;
+          margin: 0px 10px !important;
         }
       }
     }
