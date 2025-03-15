@@ -116,7 +116,7 @@ if (isset($_GET['view'])) {
               <td><?= $count++ ?></td>
               <td><?= $item['ProductName'] ?></td>
               <td>
-                <a href="http://localhost/instant-php/task-2/?view= <?= $item['id'] ?>">
+                <a href="http://localhost/instant-php/task-2-CRUD-PHP/?view= <?= $item['id'] ?>">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00a0fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye">
                     <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
                     <circle cx="12" cy="12" r="3" />
@@ -151,7 +151,7 @@ if (isset($_GET['view'])) {
     <div class="prodModal">
       <div class="modalcontent">
         <h4>product details
-          <a class="float-end" href="http://localhost/instant-php/task-2/">
+          <a class="float-end" href="http://localhost/instant-php/task-2-CRUD-PHP/">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
               <path d="M18 6 6 18" />
               <path d="m6 6 12 12" />
