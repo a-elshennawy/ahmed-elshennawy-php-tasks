@@ -32,6 +32,10 @@ if (isset($_POST['send'])) {
   }
 }
 
+// read products 
+$selectProds = "SELECT * FROM products";
+$allProds = mysqli_query($connect, $selectProds);
+
 
 ?>
 
@@ -52,14 +56,12 @@ if (isset($_POST['send'])) {
 <body>
   <!-- inputs panel -->
   <section>
-
     <div class="container">
       <div class="inptPanel row">
-
+        <!-- header -->
         <div class="header col-10">
           <h2>crud php</h2>
         </div>
-
         <!-- alert message to indicate successfull insertion -->
         <?php if ($message != null): ?>
           <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -67,7 +69,7 @@ if (isset($_POST['send'])) {
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         <?php endif; ?>
-
+        <!-- inputs -->
         <form method="post" class="dataForm col-12 row">
           <input name="name" class="col-12" type="text" placeholder="enter product name" required>
 
