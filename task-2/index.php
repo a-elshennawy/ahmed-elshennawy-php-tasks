@@ -6,11 +6,23 @@ $user = "root";
 $password = "";
 $databaseName = "shop";
 
-
 try {
   $connect = mysqli_connect($host, $user, $password, $databaseName);
 } catch (Exception $e) {
   echo $e->getMessage();
+}
+
+// select categories that already exist in our database
+$selectCategories = " SELECT * FROM categories ";
+mysqli_query($connect, $selectCategories);
+
+// create
+if (isset($_POST['send'])) {
+  $name = $_POST['name'];
+  $price = $_POST['price'];
+  $category = $_POST['category'];
+
+  echo $name . $price .  $category;
 }
 
 
@@ -40,20 +52,17 @@ try {
           <h2>crud php</h2>
         </div>
 
-        <form action="" class="dataForm col-12 row">
-          <input class="col-12" type="text" placeholder="enter customer name" required>
+        <form method="post" class="dataForm col-12 row">
+          <input name="name" class="col-12" type="text" placeholder="enter product name" required>
 
-          <input class="col-12" type="email" placeholder="enter customer email" required>
+          <input name="price" class="col-12" type="number" placeholder="enter product price" required>
 
-          <select class="col-12" name="" id="" required>
-            <option selected disabled>Select Gender</option>
-            <option value="male">male</option>
-            <option value="female">female</option>
+          <select name="category" class="col-12" id="" required>
+            <option selected disabled>Select category</option>
+            <option value="first">male</option>
           </select>
 
-          <input class="col-12" type="number" placeholder="enter customer age" required>
-
-          <button type="submit" class="submitBtn col-2">
+          <button name="send" type="submit" class="submitBtn col-2">
             add customer
           </button>
         </form>
