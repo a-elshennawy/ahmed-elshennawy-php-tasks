@@ -85,10 +85,10 @@ body {
 /* customers list */
 .customersList {
   text-align: center;
-  width: 80%;
-  margin: auto;
+  width: 60%;
+  margin: 20px auto;
   border-radius: 10px;
-  outline: 10px solid #3b3939;
+  outline: 8px solid #3b3939;
   color: #fff;
   padding: 20px;
 
