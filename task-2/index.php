@@ -26,7 +26,7 @@ if (isset($_POST['send'])) {
   $insertproduct = "INSERT INTO products (name, price, categoryid) VALUES ('$name', $price, $category)";
   $done = mysqli_query($connect, $insertproduct);
   if ($done) {
-    $message = "producted added successfully";
+    $message = "a new producted is added successfully";
   } else {
     $message = null;
   }
@@ -59,6 +59,14 @@ if (isset($_POST['send'])) {
         <div class="header col-10">
           <h2>crud php</h2>
         </div>
+
+        <!-- alert message to indicate successfull insertion -->
+        <?php if ($message != null): ?>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= $message ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <?php endif; ?>
 
         <form method="post" class="dataForm col-12 row">
           <input name="name" class="col-12" type="text" placeholder="enter product name" required>
