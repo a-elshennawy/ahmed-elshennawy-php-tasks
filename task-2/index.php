@@ -36,7 +36,15 @@ if (isset($_POST['send'])) {
 $selectProds = "SELECT * FROM `product_with_categories` ORDER BY id DESC";
 $allProds = mysqli_query($connect, $selectProds);
 
-// 
+// reading one item by id
+if (isset($_GET['view'])) {
+  $id = $_GET['view'];
+  $selectOneProd = "SELECT * FROM `product_with_categories` WHERE id = $id ";
+  $selectOneProdItem = mysqli_query($connect, $selectOneProd);
+
+  // instead of for each
+  $oneProd = mysqli_fetch_assoc($selectOneProdItem);
+}
 
 
 ?>
@@ -108,7 +116,7 @@ $allProds = mysqli_query($connect, $selectProds);
               <td><?= $count++ ?></td>
               <td><?= $item['ProductName'] ?></td>
               <td>
-                <a href="">
+                <a href="http://localhost/instant-php/task-2/?view= <?= $item['id'] ?>">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00a0fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye">
                     <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
                     <circle cx="12" cy="12" r="3" />
@@ -138,7 +146,30 @@ $allProds = mysqli_query($connect, $selectProds);
     </div>
   </section>
 
-
+  <!-- product modal -->
+  <?php if (isset($_GET['view'])): ?>
+    <div class="prodModal">
+      <div class="modalcontent">
+        <h4>product details
+          <a class="float-end" href="http://localhost/instant-php/task-2/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </a>
+        </h4>
+        <h6>
+          <strong>name :</strong> <?= $oneProd['ProductName'] ?>
+          <hr>
+          <strong>price : $</strong> <?= $oneProd['price'] ?>
+          <hr>
+          <strong>category :</strong> <?= $oneProd['categoryName'] ?>
+          <hr>
+          <strong>description :</strong> <?= $oneProd['description'] ?>
+        </h6>
+      </div>
+    </div>
+  <?php endif; ?>
   <!-- script -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
