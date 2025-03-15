@@ -17,10 +17,19 @@ $selectCategories = " SELECT * FROM categories ";
 $allCategories = mysqli_query($connect, $selectCategories);
 
 // create products
+$message = null;
 if (isset($_POST['send'])) {
   $name = $_POST['name'];
   $price = $_POST['price'];
   $category = $_POST['category'];
+
+  $insertproduct = "INSERT INTO products (name, price, categoryid) VALUES ('$name', $price, $category)";
+  $done = mysqli_query($connect, $insertproduct);
+  if ($done) {
+    $message = "producted added successfully";
+  } else {
+    $message = null;
+  }
 }
 
 
@@ -43,6 +52,7 @@ if (isset($_POST['send'])) {
 <body>
   <!-- inputs panel -->
   <section>
+
     <div class="container">
       <div class="inptPanel row">
 
