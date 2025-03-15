@@ -14,15 +14,13 @@ try {
 
 // select categories that already exist in our database
 $selectCategories = " SELECT * FROM categories ";
-mysqli_query($connect, $selectCategories);
+$allCategories = mysqli_query($connect, $selectCategories);
 
-// create
+// create products
 if (isset($_POST['send'])) {
   $name = $_POST['name'];
   $price = $_POST['price'];
   $category = $_POST['category'];
-
-  echo $name . $price .  $category;
 }
 
 
