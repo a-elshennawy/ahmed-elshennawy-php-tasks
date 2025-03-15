@@ -57,7 +57,9 @@ if (isset($_POST['send'])) {
 
           <select name="category" class="col-12" id="" required>
             <option selected disabled>Select category</option>
-            <option value="first">male</option>
+            <?php foreach ($allCategories as $item): ?>
+              <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
+            <?php endforeach; ?>
           </select>
 
           <button name="send" type="submit" class="submitBtn col-2">
