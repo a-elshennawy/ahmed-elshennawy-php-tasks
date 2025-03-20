@@ -51,6 +51,12 @@ if (isset($_GET['delete'])) {
   $id = $_GET['delete'];
   $delete = "DELETE FROM products WHERE id = $id";
   mysqli_query($connect, $delete);
+
+  // to refresh the data assuring all is up to data (yet it's better to recall the main query)
+  // header("location: http://localhost/instant-php/task-2-CRUD-PHP/");
+
+  // repeating the query to refresh data
+  $allProds = mysqli_query($connect, $selectProds);
 }
 
 
