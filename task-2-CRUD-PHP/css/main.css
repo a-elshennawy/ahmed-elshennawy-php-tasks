@@ -6,8 +6,49 @@
 
 body {
   background-color: #000;
+  h1 {
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
+/* nav */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 111;
+  background-color: #fff6f68f;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px #fff;
+
+  .collapse {
+    justify-content: center;
+    align-items: center;
+    .navbar-nav {
+      .nav-item {
+        margin: 0px 10px;
+        .nav-link {
+          color: #fff;
+          text-transform: uppercase !important;
+          font-weight: bolder;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            color: #000;
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 0px 20px;
+          }
+        }
+      }
+    }
+  }
+}
 /* input panel */
 .inptPanel {
   justify-content: center;
