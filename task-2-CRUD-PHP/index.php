@@ -60,6 +60,7 @@ if (isset($_GET['delete'])) {
 }
 
 // edit (actually viewing one item inside the input again)
+// flag vars
 $name = null;
 $price = null;
 $category = null;
