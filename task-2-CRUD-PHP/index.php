@@ -61,11 +61,15 @@ if (isset($_GET['delete'])) {
 
 // edit (actually viewing one item inside the input again)
 // flag vars
+$update = false;
 $name = null;
 $price = null;
 $category = null;
+
+
 if (isset($_GET['edit'])) {
   $id = $_GET['edit'];
+
 
   $selectOneProd = "SELECT * FROM `products` WHERE id = $id ";
   $selectOneProdItem = mysqli_query($connect, $selectOneProd);
@@ -75,9 +79,23 @@ if (isset($_GET['edit'])) {
   $name = $oneProd['name'];
   $price = $oneProd['price'];
   $category = $oneProd['categoryid'];
+
+  $update = true;
+
+  // update (it's inside the edit cuz why would u update if you ain't already editing !!! duuh )
+  // flag var
+  if (isset($_POST['update'])) {
+    // same vars cuz it's same input
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $category = $_POST['category'];
+
+    $update = "UPDATE products SET name ='$name', price = $price, categoryid = $category WHERE id = $id ";
+    mysqli_query($connect, $update);
+    header("location: http://localhost/instant-php/task-2-CRUD-PHP/");
+  }
 }
 
-// update
 
 
 ?>
@@ -114,26 +132,34 @@ if (isset($_GET['edit'])) {
         <?php endif; ?>
         <!-- inputs -->
         <form method="post" class="dataForm col-12 row">
-
+          <!-- name -->
           <input name="name" value="<?= $name ?>" class="col-12" type="text" placeholder="enter product name" required>
-
+          <!-- price -->
           <input name="price" value="<?= $price ?>" class="col-12" type="number" placeholder="enter product price" required>
-
-          <select name="category" class="col-12" id="" required>
-
-            <option disabled>Select category</option>
+          <!-- category -->
+          <select name="category" class="col-12" required>
+            <option selected disabled>Select category</option>
             <?php foreach ($allCategories as $item): ?>
-              <?php if ($item['id'] == $categoryid): ?>
-                <option selected value="<?= $item['id'] ?>"></option>
+              <?php if ($item['id'] == $category): ?>
+                <option selected value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
               <?php else: ?>
                 <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
               <?php endif; ?>
             <?php endforeach; ?>
           </select>
 
-          <button name="send" type="submit" class="submitBtn col-2">
-            add customer
-          </button>
+          <!-- decide which btn to show based on edit or add -->
+          <!-- update btn -->
+          <?php if ($update): ?>
+            <button name="update" class="updateBtn col-2">
+              update
+            </button>
+            <!-- add btn -->
+          <?php else: ?>
+            <button name="send" class="submitBtn col-2">
+              add
+            </button>
+          <?php endif; ?>
         </form>
       </div>
     </div>

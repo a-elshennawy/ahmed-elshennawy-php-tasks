@@ -64,7 +64,7 @@ body {
         inset: 0;
         height: 100%;
         width: 0%;
-        background-color: #fff;
+        background-color: #0ef006;
         border-radius: 5px;
         z-index: -1;
         transition: all 0.3s ease-in-out;
@@ -72,7 +72,42 @@ body {
 
       &:hover {
         color: #000;
-        filter: none;
+        filter: drop-shadow(0 0 3px #0ef006);
+
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+
+    .updateBtn {
+      position: relative;
+      border: none;
+      padding: 7px 10px;
+      text-transform: capitalize;
+      background-color: #000;
+      filter: drop-shadow(0 0 3px #fff);
+      color: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+      z-index: 1;
+      transition: all 0.5s ease-in-out;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 0%;
+        background-color: #ffee00;
+        border-radius: 5px;
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+        color: #000;
+        filter: drop-shadow(0 0 3px #ffee00);
 
         &::before {
           width: 100%;
