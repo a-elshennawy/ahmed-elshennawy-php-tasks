@@ -59,6 +59,25 @@ if (isset($_GET['delete'])) {
   $allProds = mysqli_query($connect, $selectProds);
 }
 
+// edit (actually viewing one item inside the input again)
+$name = null;
+$price = null;
+$category = null;
+if (isset($_GET['edit'])) {
+  $id = $_GET['edit'];
+
+  $selectOneProd = "SELECT * FROM `products` WHERE id = $id ";
+  $selectOneProdItem = mysqli_query($connect, $selectOneProd);
+
+  // instead of for each
+  $oneProd = mysqli_fetch_assoc($selectOneProdItem);
+  $name = $oneProd['name'];
+  $price = $oneProd['price'];
+  $category = $oneProd['categoryid'];
+}
+
+// update
+
 
 ?>
 
@@ -94,14 +113,20 @@ if (isset($_GET['delete'])) {
         <?php endif; ?>
         <!-- inputs -->
         <form method="post" class="dataForm col-12 row">
-          <input name="name" class="col-12" type="text" placeholder="enter product name" required>
 
-          <input name="price" class="col-12" type="number" placeholder="enter product price" required>
+          <input name="name" value="<?= $name ?>" class="col-12" type="text" placeholder="enter product name" required>
+
+          <input name="price" value="<?= $price ?>" class="col-12" type="number" placeholder="enter product price" required>
 
           <select name="category" class="col-12" id="" required>
-            <option selected disabled>Select category</option>
+
+            <option disabled>Select category</option>
             <?php foreach ($allCategories as $item): ?>
-              <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
+              <?php if ($item['id'] == $categoryid): ?>
+                <option selected value="<?= $item['id'] ?>"></option>
+              <?php else: ?>
+                <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
+              <?php endif; ?>
             <?php endforeach; ?>
           </select>
 
