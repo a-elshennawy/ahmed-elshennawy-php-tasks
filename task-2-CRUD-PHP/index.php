@@ -36,7 +36,7 @@ if (isset($_POST['send'])) {
 $selectProds = "SELECT * FROM `product_with_categories` ORDER BY id DESC";
 $allProds = mysqli_query($connect, $selectProds);
 
-// reading one item by id
+// reading one item by id (view)
 if (isset($_GET['view'])) {
   $id = $_GET['view'];
   $selectOneProd = "SELECT * FROM `product_with_categories` WHERE id = $id ";
@@ -44,6 +44,13 @@ if (isset($_GET['view'])) {
 
   // instead of for each
   $oneProd = mysqli_fetch_assoc($selectOneProdItem);
+}
+
+// delete 
+if (isset($_GET['delete'])) {
+  $id = $_GET['delete'];
+  $delete = "DELETE FROM products WHERE id = $id";
+  mysqli_query($connect, $delete);
 }
 
 
@@ -116,20 +123,23 @@ if (isset($_GET['view'])) {
               <td><?= $count++ ?></td>
               <td><?= $item['ProductName'] ?></td>
               <td>
+                <!-- view -->
                 <a href="http://localhost/instant-php/task-2-CRUD-PHP/?view= <?= $item['id'] ?>">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00a0fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye">
                     <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
                     <circle cx="12" cy="12" r="3" />
                   </svg>
                 </a>
-                <a href="">
+                <!-- edit -->
+                <a href="http://localhost/instant-php/task-2-CRUD-PHP/?edit= <?= $item['id'] ?>">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fdd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-pen">
                     <path d="M11.5 15H7a4 4 0 0 0-4 4v2" />
                     <path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
                     <circle cx="10" cy="7" r="4" />
                   </svg>
                 </a>
-                <a href="">
+                <!-- delete -->
+                <a href="http://localhost/instant-php/task-2-CRUD-PHP/?delete= <?= $item['id'] ?>">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fd0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-2">
                     <path d="M3 6h18" />
                     <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
