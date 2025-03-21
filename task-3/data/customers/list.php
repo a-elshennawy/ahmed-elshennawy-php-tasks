@@ -31,7 +31,7 @@ if (isset($_GET['delete'])) {
 <!-- customers list -->
 <section>
     <div class="container">
-        <h3 class="allCustomersListHeader" >all customers</h3>
+        <h3 class="allCustomersListHeader">all customers</h3>
         <table class="allCustomerslist">
             <thead>
                 <td>id</td>
@@ -45,7 +45,7 @@ if (isset($_GET['delete'])) {
                         <td><?= $customers['name'] ?></td>
                         <td>
                             <!-- view -->
-                            <a href="http://localhost/instant-php/task-3/data/customers/list.php?view= <?= $customers['id'] ?>">
+                            <a href="http://localhost/instant-php/task-3/data/customers/list.php?view=<?= $customers['id'] ?>">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00a0fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye">
                                     <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
                                     <circle cx="12" cy="12" r="3" />
