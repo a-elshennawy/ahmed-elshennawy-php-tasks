@@ -12,6 +12,14 @@ if (isset($_GET['view'])) {
 
     $oneCustomer = mysqli_fetch_assoc($selectOneCustomerItem);
 }
+
+if (isset($_GET['delete'])) {
+    $id = $_GET['delete'];
+    $deleteCustomer = "DELETE FROM `customers` WHERE id = $id";
+    mysqli_query($connect, $deleteCustomer);
+
+    $allCustomers = mysqli_query($connect, $selectCustomers);
+}
 ?>
 
 <!-- importing head -->
@@ -43,7 +51,7 @@ if (isset($_GET['view'])) {
                                 </svg>
                             </a>
                             <!-- edit -->
-                            <a href="http://localhost/instant-php/task-3/data/customers/add.php?edit=">
+                            <a href="http://localhost/instant-php/task-3/data/customers/add.php?edit=<?= $customers['id'] ?>">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fdd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-pen">
                                     <path d="M11.5 15H7a4 4 0 0 0-4 4v2" />
                                     <path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
@@ -51,7 +59,7 @@ if (isset($_GET['view'])) {
                                 </svg>
                             </a>
                             <!-- delete -->
-                            <a href="http://localhost/instant-php/task-3/data/customers/list.php?delete=">
+                            <a href="http://localhost/instant-php/task-3/data/customers/list.php?delete=<?= $customers['id'] ?>">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fd0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-2">
                                     <path d="M3 6h18" />
                                     <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
