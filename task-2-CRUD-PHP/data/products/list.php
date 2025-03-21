@@ -37,10 +37,10 @@ if (isset($_GET['view'])) {
 
 <!-- importing navbar -->
 <?php include_once '../../shared/nav.php' ?>
-<!-- customers list -->
+<!-- products list -->
 <section>
     <div class="container-fluid">
-        <table class="customersList">
+        <table class="productsList">
             <thead>
                 <td>ID</td>
                 <td>name</td>

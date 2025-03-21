@@ -55,3 +55,38 @@ body {
     }
   }
 }
+
+.allCustomerslist {
+  text-align: center;
+  width: 60%;
+  margin: 20px auto;
+  outline: 5px solid #fff;
+  color: #fff;
+  padding: 20px;
+
+  thead {
+    background-color: #000;
+    border-radius: 5px;
+    padding: 20px;
+    border-bottom: 1px solid #3b3939;
+
+    td {
+      padding: 10px;
+    }
+  }
+  tbody {
+    background-color: #000;
+    border-radius: 5px;
+    tr {
+      border-bottom: 1px solid #3b3939;
+      td {
+        padding: 10px;
+        a {
+          color: #fff;
+          text-decoration: none;
+          margin: 0px 10px !important;
+        }
+      }
+    }
+  }
+}
