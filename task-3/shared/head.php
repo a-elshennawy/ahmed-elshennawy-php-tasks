@@ -7,7 +7,7 @@
     <!-- libraries -->
     <link rel="stylesheet" href="/instant-php/task-3/css/Vendors/bootstrap.min.css">
     <!-- customized style -->
-    <link rel="stylesheet" href="/instant-php/task-3/css/Vendors/main.css">
+    <link rel="stylesheet" href="/instant-php/task-3/css/main.css">
     <!-- title -->
     <title>full crud system</title>
 </head>
