@@ -31,6 +31,7 @@ if (isset($_GET['delete'])) {
 <!-- customers list -->
 <section>
     <div class="container">
+        <h3 class="allCustomersListHeader" >all customers</h3>
         <table class="allCustomerslist">
             <thead>
                 <td>id</td>

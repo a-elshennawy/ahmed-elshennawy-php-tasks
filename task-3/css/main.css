@@ -56,6 +56,11 @@ body {
   }
 }
 
+.allCustomersListHeader {
+  color: #fff;
+  text-align: center;
+  margin: 30px 0px;
+}
 .allCustomerslist {
   text-align: center;
   width: 60%;
