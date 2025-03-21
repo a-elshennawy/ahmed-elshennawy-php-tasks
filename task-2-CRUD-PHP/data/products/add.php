@@ -7,7 +7,6 @@ $selectCategories = " SELECT * FROM categories ";
 $allCategories = mysqli_query($connect, $selectCategories);
 
 // create products
-$message = null;
 if (isset($_POST['send'])) {
     $name = $_POST['name'];
     $price = $_POST['price'];
