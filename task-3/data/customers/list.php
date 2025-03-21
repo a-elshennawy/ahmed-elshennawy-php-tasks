@@ -98,3 +98,6 @@ if (isset($_GET['delete'])) {
         </div>
     </div>
 <?php endif; ?>
+
+<!-- importing script -->
+<?php include_once '../../shared/script.php' ?>
