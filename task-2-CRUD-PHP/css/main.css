@@ -23,9 +23,7 @@ body {
   left: 0;
   right: 0;
   z-index: 111;
-  background-color: #fff6f68f;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 15px #fff;
+  background-image: linear-gradient(#fff, #000);
 
   .collapse {
     justify-content: center;
