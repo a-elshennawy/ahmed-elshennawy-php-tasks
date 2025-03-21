@@ -6,8 +6,8 @@ if (isset($_POST['send'])) {
     $number = $_POST['number'];
     $address = $_POST['address'];
 
-    $adCustomer = "INSERT INTO `customers` (name,phone,address) VALUES ('$name','$number','$address')";
-    $additionDone = mysqli_query($connect, $adCustomer);
+    $addCustomer = "INSERT INTO `customers` (name,phone,address) VALUES ('$name','$number','$address')";
+    $additionDone = mysqli_query($connect, $addCustomer);
     header("location:http://localhost/instant-php/task-3/data/customers/list.php");
 }
 
