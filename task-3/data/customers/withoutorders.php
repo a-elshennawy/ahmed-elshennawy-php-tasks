@@ -26,8 +26,8 @@ if (isset($_GET['view'])) {
 <!-- customers list -->
 <section>
     <div class="container">
-        <h3 class="allCustomersListHeader">all customers</h3>
-        <table class="allCustomerslist">
+        <h3 class="listHeader">customers without orders</h3>
+        <table class="list">
             <thead>
                 <td>id</td>
                 <td>name</td>
@@ -55,7 +55,7 @@ if (isset($_GET['view'])) {
 </section>
 <!-- customer modal -->
 <?php if (isset($_GET['view'])): ?>
-    <div class="custModal">
+    <div class="Modal">
         <div class="modalcontent">
             <h4>customer details
                 <a class="float-end" href="http://localhost/instant-php/task-3/data/customers/withoutorders.php">

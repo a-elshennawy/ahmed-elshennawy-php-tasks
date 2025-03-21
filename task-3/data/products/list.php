@@ -33,8 +33,8 @@ if (isset($_GET['delete'])) {
 <!-- products list -->
 <section>
     <div class="container">
-        <h3 class="allPordusctsListHeader">all products</h3>
-        <table class="allPordusctsList">
+        <h3 class="listHeader">all products</h3>
+        <table class="list">
             <thead>
                 <td>id</td>
                 <td>product name</td>
@@ -80,7 +80,7 @@ if (isset($_GET['delete'])) {
 </section>
 <!-- products modal -->
 <?php if (isset($_GET['view'])): ?>
-    <div class="ProdModal">
+    <div class="Modal">
         <div class="modalcontent">
             <h4>product details
                 <a class="float-end" href="http://localhost/instant-php/task-3/data/products/list.php">
