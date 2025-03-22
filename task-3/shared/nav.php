@@ -27,8 +27,8 @@
                         orders
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">add</a></li>
-                        <li><a class="dropdown-item" href="#">list</a></li>
+                        <li><a class="dropdown-item" href="http://localhost/instant-php/task-3/data/orders/add.php">add</a></li>
+                        <li><a class="dropdown-item" href="http://localhost/instant-php/task-3/data/orders/list.php">list</a></li>
                     </ul>
                 </li>
                 <!-- products -->

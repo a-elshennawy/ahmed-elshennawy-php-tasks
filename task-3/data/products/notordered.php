@@ -50,7 +50,7 @@ if (isset($_GET['view'])) {
         </table>
     </div>
 </section>
-<!-- customer modal -->
+<!-- product modal -->
 <?php if (isset($_GET['view'])): ?>
     <div class="Modal">
         <div class="modalcontent">
@@ -65,7 +65,7 @@ if (isset($_GET['view'])) {
             <h6>
                 <strong>name :</strong> <?= $oneProduct['product_name']  ?>
                 <hr>
-                <strong>phone : </strong> <?= $oneProduct['product_price'] ?>
+                <strong>price : $ </strong> <?= $oneProduct['product_price'] ?>
             </h6>
         </div>
     </div>
