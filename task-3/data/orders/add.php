@@ -84,11 +84,11 @@ if (isset($_GET['edit'])) {
                 <input type="number" name="orderAmount" placeholder="order amount $" value="<?= $amount ?>" required>
                 <?php if ($update): ?>
                     <button name="update" class="updateBtn col-2">
-                        update customer
+                        update order
                     </button>
                 <?php else: ?>
                     <button name="send" class="addBtn col-2">
-                        add customer
+                        add order
                     </button>
                 <?php endif; ?>
             </form>
