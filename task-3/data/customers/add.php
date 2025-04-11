@@ -8,7 +8,7 @@ if (isset($_POST['send'])) {
 
     $addCustomer = "INSERT INTO `customers` (name,phone,address) VALUES ('$name','$number','$address')";
     $additionDone = mysqli_query($connect, $addCustomer);
-    header("location:http://localhost/instant-php/task-3/data/customers/list.php");
+    header("location:http://localhost/ahmed-elshennawy-php-tasks/task-3/data/customers/list.php");
 }
 
 $update = false;
@@ -33,7 +33,7 @@ if (isset($_GET['edit'])) {
 
         $update = "UPDATE `customers` SET name ='$name',phone ='$number', address ='$address' WHERE id =$id";
         mysqli_query($connect, $update);
-        header("location:http://localhost/instant-php/task-3/data/customers/list.php");
+        header("location:http://localhost/ahmed-elshennawy-php-tasks/task-3/data/customers/list.php");
     }
 }
 

@@ -15,7 +15,7 @@ if (isset($_POST['send'])) {
 
     $addOrder = "INSERT INTO `orders` (customerid ,productid ,amount) VALUES ($customer,$product,$amount)";
     $additionDone = mysqli_query($connect, $addOrder);
-    header("location:http://localhost/instant-php/task-3/data/orders/list.php");
+    header("location:http://localhost/ahmed-elshennawy-php-tasks/task-3/data/orders/list.php");
 }
 $update = false;
 $customer = null;
@@ -40,7 +40,7 @@ if (isset($_GET['edit'])) {
 
         $update = "UPDATE `orders` SET customerid ='$customer', productid ='$product', amount = $amount WHERE id =$id";
         mysqli_query($connect, $update);
-        header("location:http://localhost/instant-php/task-3/data/orders/list.php");
+        header("location:http://localhost/ahmed-elshennawy-php-tasks/task-3/data/orders/list.php");
     }
 }
 
